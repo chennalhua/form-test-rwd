@@ -1,0 +1,53 @@
+//簽名板
+.signature{
+    background: #eee;
+    width: 800px;
+    height: 350px;
+    .signature-image {
+        img{
+            display: block;
+            width: 300px !important;
+            height: 200px !important;
+        }
+    }
+}
+
+/*loading*/
+.loading-wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+    }
+    .spinner-border--width {
+        width: 3rem;
+        height: 3rem;
+        border: 0.4em solid #464646;
+        border-right-color: transparent;
+    }
+}
+
+.spinner-grow {
+    width: 1.2rem;
+    height: 1.2rem;
+    &::before {
+        content: "";
+        width: 0.4rem;
+        height: 0.4rem;
+        background: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        transform: rotate(45deg) translate(-50%, -50%);
+        top: 57%;
+        left: 33%;
+        border-radius: 1.5px;
+    }
+}
