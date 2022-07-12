@@ -11,13 +11,15 @@ const AppRoute = () => {
     return (
         <>
             <Router>
-                <Route exact path='/test'><Test /></Route>
-                <Route exact path='/'><HomePage /></Route>
-                <Route exact path='/signature'><Signature /></Route>
-                <Route exact path='/review'><GoldenForm /></Route>
-                <Route exact path='/pdf'><PDFjs /></Route>
+                <Switch>
+                    <Route exact path='/test'><Test /></Route>
+                    <Route exact path='/'><HomePage /></Route>
+                    <Route exact path='/signature'><Signature /></Route>
+                    <Route exact path='/review'><GoldenForm /></Route>
+                    <Route exact path='/pdf'><PDFjs /></Route>
+                </Switch>
             </Router>
         </>
     )
-} 
+}
 export default AppRoute
