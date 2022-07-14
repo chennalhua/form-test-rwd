@@ -28,6 +28,7 @@ const GoldenForm = () => {
             setReviewFile(location.state.reviewData)
         }
     }, [location]);
+    console.log(location)
 
     const handleEvent = {
         resetSign: function () { //返回重簽
@@ -74,7 +75,7 @@ const GoldenForm = () => {
         <>
             <Loading isLoading={isLoading} />
             <AlertMes mes={alertMes.mes} show={alertMes.shoe} color={alertMes.color} />
-            <div className='container'>
+            {/* <div className='container'>
                 <h4 className='text-center fw-bolder mt-4'>檢視(簽名)</h4>
                 <div className='text-center py-3'>
                     <button className='btn btn-third fw-bolder me-3' onClick={handleEvent.resetSign}>取消，重簽</button>
@@ -84,10 +85,10 @@ const GoldenForm = () => {
                     <iframe src={reviewFile.SignFile} className='iframe-responsive'></iframe>
                 </div>
                 <img src={location.state.reviewData.Signatorys[0].PicSign} className='img-fluid'/>
-            </div>
-            {/* <center>
+            </div> */}
+            <center>
                 <div className='bg-third' style={{ overflowY: 'scroll', height: '450px' }}>
-                    <Document file={location.state.SignFile} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Document file={reviewFile.SignFile} onLoadSuccess={onDocumentLoadSuccess}>
                         {Array.from(
                             new Array(numPages),
                             (el, index) => (
@@ -95,7 +96,8 @@ const GoldenForm = () => {
                                     key={`page_${index + 1}`}
                                     height='1100'
                                     pageNumber={index + 1}
-                                    className='pt-3'
+                                    className='pt-3 img-fluid'
+                                    style={{fontSize:'16px'}}
                                 >
                                 </Page>
                             )
@@ -106,7 +108,7 @@ const GoldenForm = () => {
                     <button className='btn btn-third fw-bolder me-3'>取消，重簽</button>
                     <button className='btn btn-secondary fw-bolder text-light'>確認，上傳</button>
                 </div>
-            </center> */}
+            </center>
         </>
 
 

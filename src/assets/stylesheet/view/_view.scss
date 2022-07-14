@@ -27,3 +27,15 @@
         height:100%;
     }
 }
+
+
+
+//PDF REVIEW
+.react-pdf__Page__annotations ,.react-pdf__Page__textContent{
+    display: none !important;
+}
+
+.react-pdf__Page > canvas{
+    height: auto !important;
+    max-width: 100%;
+}
